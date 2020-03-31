@@ -21,9 +21,12 @@ HulkDancer.prototype.step = function () {
     this.$node.animate({
       top: dimensions[0],
       left: dimensions[1]
-    }, 2000);
+    }, 4000);
   }
 
+  if (!this.isMoving){
+    this.$node.stop();
+  }
 };
 
 

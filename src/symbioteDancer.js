@@ -1,13 +1,13 @@
-var SpiderDancer = function (top, left, timeBetweenSteps) {
+var SymbioteDancer = function (top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('SpiderDancer');
-  this.$node.attr('src', './spider.gif');
+  this.$node.addClass('');
+  this.$node.attr('src', './symbiote.jpg');
 }
-SpiderDancer.prototype = Object.create(Dancer.prototype);
-SpiderDancer.prototype.constructor = SpiderDancer;
+SymbioteDancer.prototype = Object.create(Dancer.prototype);
+SymbioteDancer.prototype.constructor = SymbioteDancer;
 
 
-SpiderDancer.prototype.step = function () {
+SymbioteDancer.prototype.step = function () {
   Dancer.prototype.step.call(this);
 
   this.$node.css({

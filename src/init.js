@@ -38,14 +38,19 @@ $(document).ready(function () {
 
   $('.hulkAngry').on('click', function (event) {
     if (!window.isHulkAngry) {
-
       hulkSmash.play();
       var name = $(this).data('data-hulk-angry');
       var hulk = $(`.${"HulkDancer"}`);
+      var hulkIndex = window.dancerNames.indexOf("HulkDancer");
+      var wasHeMoving = window.dancers[hulkIndex].isMoving
 
-      hulk.fadeOut('slow', function () {
+      if (wasHeMoving = true) {
+        window.dancers[hulkIndex].isMoving = false;
+      }
+
+      hulk.fadeOut('fast', function () {
         hulk.attr('src', './hulkTransition.gif');
-        hulk.fadeIn('slow');
+        hulk.fadeIn('fast');
       });
 
       hulk.animate({
@@ -55,7 +60,19 @@ $(document).ready(function () {
       $(".hulkAngry").html("calm down hulk");
       isHulkAngry = true;
 
+      if (wasHeMoving = true) {
+        window.dancers[hulkIndex].isMoving = true;
+      }
+
     } else {
+
+      var hulkIndex = window.dancerNames.indexOf("HulkDancer");
+      var wasHeMoving = window.dancers[hulkIndex].isMoving
+
+      if (wasHeMoving = true) {
+        window.dancers[hulkIndex].isMoving = false;
+      }
+
       var name = $(this).data('data-hulk-angry');
       var hulk = $(`.${"HulkDancer"}`);
       hulk.fadeOut('slow', function () {
@@ -64,6 +81,11 @@ $(document).ready(function () {
       });
       $(".hulkAngry").html("hulk angry");
       isHulkAngry = false
+
+      if (wasHeMoving = true) {
+        window.dancers[hulkIndex].isMoving = true;
+      }
+
     }
   });
 });

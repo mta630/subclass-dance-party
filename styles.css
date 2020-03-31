@@ -83,6 +83,8 @@ ul li{
 
 .HulkDancer {
   border:none;
+  background-image: url(./hulkTransition.gif);
+  background-repeat: no-repeat;
 }
 
 .BlinkyDancer {
