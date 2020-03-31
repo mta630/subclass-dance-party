@@ -1,6 +1,6 @@
 var BlinkyDancer = function (top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('nightCrawler');
+  this.$node.addClass('BlinkyDancer');
   this.$node.attr('src', '../nightCrawler.gif');
 }
 // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -16,12 +16,10 @@ BlinkyDancer.prototype.step = function () {
 
   this.$node.fadeOut(500);
 
-  setTimeout(this.setPosition($("body").height() * Math.random(),
-    $("body").width() * Math.random(),
+  setTimeout(this.setPosition($(".dancefloor").height() - 1000 * Math.random(),
+    $(".dancefloor").width() - 1000 * Math.random(),
     Math.random() * 1000), 1001);
 
   this.$node.fadeIn(500);
-
-
 };
 

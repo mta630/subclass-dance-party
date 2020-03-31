@@ -14,7 +14,7 @@ var Dancer = function (top, left, timeBetweenSteps) {
 
 Dancer.prototype.step = function () {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
-}
+};
 
 Dancer.prototype.setPosition = function (top, left) {
   var styleSettings = {
@@ -22,4 +22,11 @@ Dancer.prototype.setPosition = function (top, left) {
     left: left
   };
   this.$node.css(styleSettings);
+}
+
+Dancer.prototype.lineUp = function (top) {
+  this.$node.animate({
+    top: top,
+    left: this.left
+  }, 2000);
 }

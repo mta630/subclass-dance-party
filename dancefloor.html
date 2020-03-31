@@ -7,16 +7,29 @@
   <script src="lib/jquery.js"></script>
   <script src="src/dancer.js"></script>
   <script src="src/blinkyDancer.js"></script>
-  <script src="src/HulkDancer.js"></script>
+  <script src="src/hulkDancer.js"></script>
 </head>
 
 <body>
-  <div class="topbar">
-    <span class="title">object dance party</span>
-    <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>
-    <a href="#" class="addDancerButton" data-dancer-maker-function-name="HulkDancer">add a Hulk Dancer</a>
-  </div>
+
   <script src="src/init.js"></script>
+  <div class="container">
+    <div class="title">
+      <h1>Subclass Dance Party: Superhero Edition</h1>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href=# class="btn btn-alt lineupButton">Line up</a></li>
+        <li><a href="#" class="btn btn-alt addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky
+            dancer</a></li>
+        <li><a href="#" class="btn btn-alt addDancerButton" data-dancer-maker-function-name="HulkDancer">add a Hulk
+            Dancer</a></li>
+        <ul>
+    </div>
+    <div class="dancefloor"></div>
+    <div class="footer"></div>
+  </div>
+
 </body>
 
 </html>

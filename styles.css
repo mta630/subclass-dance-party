@@ -1,33 +1,89 @@
-body, html{
-  height:100%;
+html, body {
+  box-sizing: border-box;
+  background-color: white;
+  height: 100%;
+  padding: 10px;
+  margin: 0px;
 }
+
+.container {
+	height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 110px 80px auto 80px;
+    grid-template-areas:
+    		"t t t t t t t t t t t t"
+    		"m m m m m m m m m m m m"
+			  "d d d d d d d d d d d d"
+			  "f f f f f f f f f f f f";
+}
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
+}
+
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:#2C2A89;
   font-size: 18px;
 }
-body, a:link, a:visited, a:active{
-  color: lightblue;
+
+.title {
+  grid-area: t;
+  background-color: #2C2A89;
 }
-.title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
+
+h1 {
+  color: #7B6FDE;
+	text-shadow: black 2px 2px;
+	text-shadow: black 2px 2px;
+	font-size: 50px;
 }
-.topbar{
-  height:32px;
-  background-color: #555;
+
+ul {
+	font-size: 30px;
+	list-style: none;
+	margin-right: 50px;
+
 }
-.title{
-  background-color: #777;
+
+ul li{
+	display:inline;
+	font-weight: 50;
+	font-size: 30px;
+	font-family: 'Bebas Neue', cursive;
+	display: inline;
 }
+
+.menu {
+  grid-area: m;
+  background-color:#0B0930;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 .dancer{
   border-radius:10px;
   position:absolute;
 }
-.hulkDancer {
+
+.HulkDancer {
   border:none;
   height:114px;
   width:100px;
+}
+
+.BlinkyDancer {
+  border:none;
+}
+
+.dancefloor {
+  grid-area: d;
+  background-image: url("dancefloor.jpg");
 }
 
 @keyframes spin {
@@ -37,4 +93,45 @@ body, a:link, a:visited, a:active{
 	100% {
 		transform: rotateZ(360deg);
 	}
+}
+
+@keyframes twist {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
+  }
+}
+
+/*
+  ==================BUTTON============
+*/
+
+.btn {
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn-alt {
+  border: 1px solid white;
+  padding: 10px 30px;
+}
+
+.btn-alt:hover {
+  background: #00acee;
+  color: #02182B;
 }
