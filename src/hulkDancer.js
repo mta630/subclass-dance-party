@@ -14,9 +14,17 @@ HulkDancer.prototype.step = function () {
 
   Dancer.prototype.step.call(this);
 
-  // this.$node.animate({height: 150%,
-  //                     width: 150%});
+  this.$node.animate({
+    height: "300px",
+    width: "250px"
+  }, 2000);
+  this.$node.animate({
+    height: "114px",
+    width: "100px"
+  }, 2000);
 
-
+  // this.$node.css({
+  //   animation: "spin 1s linear infinite"
+  // });
 
 };

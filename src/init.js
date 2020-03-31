@@ -1,5 +1,6 @@
 $(document).ready(function () {
   window.dancers = [];
+  console.log(window.dancers);
 
   $('.addDancerButton').on('click', function (event) {
 
@@ -16,8 +17,11 @@ $(document).ready(function () {
 
 
     $('body').append(dancer.$node);
+
   });
 });
+
+
 
 
 
