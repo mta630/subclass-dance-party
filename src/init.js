@@ -10,7 +10,6 @@ $(document).ready(function () {
 
     if (!window.dancerNames.includes(dancerMakerFunctionName)) {
       // make a dancer with a random position
-      console.log(this);
       var dancer = new dancerMakerFunction(
         $(".dancefloor").height() * Math.random(),
         $(".dancefloor").width() * Math.random(),
@@ -22,7 +21,9 @@ $(document).ready(function () {
       window.dancers.push(dancer);
       window.dancerNames.push(dancerMakerFunctionName)
     } else {
-      console.log(dancerMakerFunctionName);
+      console.log(window.dancerNames);
+      var pos = window.dancerNames.indexOf(dancerMakerFunctionName);
+      console.log(JSON.stringify(window.dancers[pos].step()));
       $(`.${dancerMakerFunctionName}`).toggle();
     }
   });
