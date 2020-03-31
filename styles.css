@@ -1,8 +1,8 @@
 html, body {
   box-sizing: border-box;
-  background-color: white;
+  background-color: #3FEEE6;
   height: 100%;
-  padding: 10px;
+  padding: 5px;
   margin: 0px;
 }
 
@@ -28,40 +28,46 @@ html, body {
 
 body{
   margin: 0px;
-  background-color:#2C2A89;
+  background-color: #3FEEE6;
   font-size: 18px;
 }
 
 .title {
   grid-area: t;
-  background-color: #2C2A89;
+  background-color: #FC4445;
 }
 
 h1 {
-  color: #7B6FDE;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  color: white;
 	text-shadow: black 2px 2px;
 	text-shadow: black 2px 2px;
-	font-size: 50px;
+  font-size: 50px;
+  font-style: italic;
+}
+
+h1 span {
+  font-weight: 900;
+  font-style: none;
 }
 
 ul {
-	font-size: 30px;
 	list-style: none;
-	margin-right: 50px;
-
+  margin-right: 50px;
+  font-weight: 400;
 }
 
 ul li{
+  font-style: italic;
 	display:inline;
-	font-weight: 50;
-	font-size: 30px;
-	font-family: 'Bebas Neue', cursive;
+	font-size: 15px;
 	display: inline;
 }
 
 .menu {
   grid-area: m;
-  background-color:#0B0930;
+  background-color:#3FEEE6;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -115,23 +121,25 @@ ul li{
 */
 
 .btn {
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 400;
-  letter-spacing: .5px;
-  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  color: #FC4445 ;
   text-transform: uppercase;
+  background: #3FEEE6;
+  padding: 20px;
+  border: 4px solid #FC4445;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
   text-decoration: none;
 }
 
-.btn-alt {
-  border: 1px solid white;
-  padding: 10px 30px;
+.btn:hover {
+  color: white ;
+  border-radius: 50px;
+  border-color: white ;
+  transition: all 0.3s ease 0s;
 }
 
-.btn-alt:hover {
-  background: #00acee;
-  color: #02182B;
-}
+/*
+  =======================DISCO BALL========================
+*/
