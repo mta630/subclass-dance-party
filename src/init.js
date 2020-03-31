@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  const hulkSmash = new Audio("./smash.wav")
+  hulkSmash.volume = 0.04;
+
   window.dancers = [];
   window.dancerNames = [];
   window.isHulkAngry = false;
@@ -10,8 +13,8 @@ $(document).ready(function () {
 
     if (!window.dancerNames.includes(dancerMakerFunctionName)) {
 
-      var newHeight = Math.floor(Math.random() * (700 - 200)) + 200;
-      var newWidth = Math.floor(Math.random() * (1700 - 10)) + 10;
+      var newHeight = Math.floor(Math.random() * (600 - 200)) + 200;
+      var newWidth = Math.floor(Math.random() * (1500 - 10)) + 10;
       // make a dancer with a random position
       var dancer = new dancerMakerFunction(newHeight, newWidth, Math.random() * 1000);
 
@@ -33,20 +36,36 @@ $(document).ready(function () {
     console.log(window.dancers[0].isMoving);
   });
 
-  // $('.hulkAngry').on('click', function (event) {
-  //   var name = $(this).data('data-hulk-angry');
-  //   var hulk = $(`.${"HulkDancer"}`);
+  $('.hulkAngry').on('click', function (event) {
+    if (!window.isHulkAngry) {
 
-  //   hulk.fadeOut('fast', function () {
-  //     hulk.attr('src', './hulkTransition.gif');
-  //     hulk.fadeIn('fast');
-  //     hulkAngry = true;
-  //   });
+      hulkSmash.play();
+      var name = $(this).data('data-hulk-angry');
+      var hulk = $(`.${"HulkDancer"}`);
 
-  //   hulk.animate({
-  //     height: "200px",
-  //     width: "220px"
-  //   })
+      hulk.fadeOut('slow', function () {
+        hulk.attr('src', './hulkTransition.gif');
+        hulk.fadeIn('slow');
+      });
+
+      hulk.animate({
+        height: "300px",
+        width: "320px"
+      })
+      $(".hulkAngry").html("calm down hulk");
+      isHulkAngry = true;
+
+    } else {
+      var name = $(this).data('data-hulk-angry');
+      var hulk = $(`.${"HulkDancer"}`);
+      hulk.fadeOut('slow', function () {
+        hulk.attr('src', './hulk1.gif');
+        hulk.fadeIn('slow');
+      });
+      $(".hulkAngry").html("hulk angry");
+      isHulkAngry = false
+    }
+  });
 });
 
 

@@ -5,9 +5,9 @@ var Dancer = function (top, left, timeBetweenSteps) {
   this._top = top;
   this._left = left;
   this.minTop = 200;
-  this.maxTop = 550;
+  this.maxTop = 500;
   this.minLeft = 10;
-  this.maxLeft = 1700;
+  this.maxLeft = 1500;
   this.isMoving = false;
 
 

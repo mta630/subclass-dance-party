@@ -10,12 +10,11 @@ html, body {
 	height: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 110px 80px auto 80px;
+    grid-template-rows: 110px 80px auto;
     grid-template-areas:
     		"t t t t t t t t t t t t"
     		"m m m m m m m m m m m m"
-			  "d d d d d d d d d d d d"
-			  "f f f f f f f f f f f f";
+			  "d d d d d d d d d d d d";
 }
 
 .container > div {
@@ -92,14 +91,6 @@ ul li{
 
 .SpiderDancer {
   border: none;
-}
-
-.startMoving {
-
-}
-
-.hulkAngry {
-
 }
 
 .dancefloor {
