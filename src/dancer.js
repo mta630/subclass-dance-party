@@ -4,6 +4,13 @@ var Dancer = function (top, left, timeBetweenSteps) {
   this.$node = $('<img class="dancer"></img>');
   this._top = top;
   this._left = left;
+  this.minTop = 200;
+  this.maxTop = 550;
+  this.minLeft = 10;
+  this.maxLeft = 1700;
+  this.isMoving = false;
+
+
 
   this.timeBetweenSteps = timeBetweenSteps;
   this.step();
@@ -12,6 +19,11 @@ var Dancer = function (top, left, timeBetweenSteps) {
   this.setPosition(this._top, this._left);
 };
 
+Dancer.prototype.getRandomDimension = function () {
+  var newHeight = Math.floor(Math.random() * (this.maxTop - this.minTop)) + this.minTop;
+  var newWidth = Math.floor(Math.random() * (this.maxLeft - this.minLeft)) + this.minLeft;
+  return [newHeight, newWidth];
+};
 Dancer.prototype.step = function () {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
@@ -22,35 +34,10 @@ Dancer.prototype.setPosition = function (top, left) {
     left: left
   };
   this.$node.css(styleSettings);
-}
-
-Dancer.prototype.makeNewPosition = function ($container) {
-
-  // Get viewport dimensions (remove the dimension of the div)
-  $container = ($container || $(window))
-  var height = $container.height() - 50;
-  var width = $container.width() - 50;
-
-  var newHeight = Math.floor(Math.random() * height);
-  var newWidth = Math.floor(Math.random() * width);
-
-  return [newHeight, newWidth];
-}
-
-Dancer.prototype.animateDiv = function (dancerEle) {
-  var $target = dancerEle;
-  var newq = this.makeNewPosition($target.parent());
-
-  dancerEle.animate({
-      top: newq[0],
-      left: newq[1]
-  }, 1000);
-
 };
-
 Dancer.prototype.lineUp = function (top) {
-  this.$node.animate({
-    top: top,
-    left: this.left
-  }, 2000);
+  var styleSettings = {
+    left: 10
+  };
+  this.$node.css(styleSettings);
 }

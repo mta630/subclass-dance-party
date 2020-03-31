@@ -77,15 +77,13 @@ ul li{
   border-right: .5px solid black;
 }
 
-.dancer{
+.dancer {
   border-radius:10px;
   position:absolute;
 }
 
 .HulkDancer {
   border:none;
-  height:114px;
-  width:100px;
 }
 
 .BlinkyDancer {
@@ -94,6 +92,14 @@ ul li{
 
 .SpiderDancer {
   border: none;
+}
+
+.startMoving {
+
+}
+
+.hulkAngry {
+
 }
 
 .dancefloor {

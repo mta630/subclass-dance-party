@@ -8,20 +8,19 @@ SpiderDancer.prototype.constructor = SpiderDancer;
 
 
 SpiderDancer.prototype.step = function () {
-
   Dancer.prototype.step.call(this);
 
   this.$node.css({
-     animation: "spin 1s linear infinite"
+    animation: "spin 1s linear infinite"
   });
 
+  var dimensions = this.getRandomDimension();
 
-  var height = $(".dancefloor").height() - 1000 * Math.random();
-  var width = $(".dancefloor").width() - 1000 * Math.random();
 
-  this.$node.animate({
-    top: height.toString(),
-    left: width.toString()
-  }, 2000);
+  // this.$node.animate({
+  //   top: dimensions[0],
+  //   left: dimensions[1]
+  // }, 2000);
+
 
 };
