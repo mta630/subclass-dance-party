@@ -1,6 +1,7 @@
 $(document).ready(function () {
   window.dancers = [];
   window.dancerNames = [];
+  window.isHulkAngry = false;
 
   $('.addDancerButton').on('click', function (event) {
 
@@ -21,9 +22,6 @@ $(document).ready(function () {
       window.dancers.push(dancer);
       window.dancerNames.push(dancerMakerFunctionName)
     } else {
-      console.log(window.dancerNames);
-      var pos = window.dancerNames.indexOf(dancerMakerFunctionName);
-      console.log(JSON.stringify(window.dancers[pos].step()));
       $(`.${dancerMakerFunctionName}`).toggle();
     }
   });
@@ -34,10 +32,19 @@ $(document).ready(function () {
     // })
   });
 
+  $('.hulkAngry').on('click', function (event) {
+    var name = $(this).data('data-hulk-angry');
+    console.log(name);
+    var hulk = $(`.${name}`);
 
+    hulk.fadeOut('fast', function () {
+      hulk.attr('src', './hulkTransition.gif');
+      hulk.fadeIn('fast');
+      hulkAngry = true;
+    });
+  });
+})
 
-
-});
 
 
 

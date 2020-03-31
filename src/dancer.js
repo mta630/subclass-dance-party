@@ -24,6 +24,30 @@ Dancer.prototype.setPosition = function (top, left) {
   this.$node.css(styleSettings);
 }
 
+Dancer.prototype.makeNewPosition = function ($container) {
+
+  // Get viewport dimensions (remove the dimension of the div)
+  $container = ($container || $(window))
+  var height = $container.height() - 50;
+  var width = $container.width() - 50;
+
+  var newHeight = Math.floor(Math.random() * height);
+  var newWidth = Math.floor(Math.random() * width);
+
+  return [newHeight, newWidth];
+}
+
+Dancer.prototype.animateDiv = function (dancerEle) {
+  var $target = dancerEle;
+  var newq = this.makeNewPosition($target.parent());
+
+  dancerEle.animate({
+      top: newq[0],
+      left: newq[1]
+  }, 1000);
+
+};
+
 Dancer.prototype.lineUp = function (top) {
   this.$node.animate({
     top: top,
