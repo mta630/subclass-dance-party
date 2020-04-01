@@ -10,6 +10,7 @@ SymbioteDancer.prototype.constructor = SymbioteDancer;
 SymbioteDancer.prototype.step = function () {
   Dancer.prototype.step.call(this);
 
+
   this.$node.css({
     animation: "pulse 1s linear infinite"
   });

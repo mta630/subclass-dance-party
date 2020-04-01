@@ -3,15 +3,15 @@ var MystiqueDancer = function (top, left, timeBetweenSteps) {
   this.$node.addClass('MystiqueDancer');
   this.$node.attr('id', 'MystiqueDancer');
   this.$node.attr('src', './img/mystique.gif');
-}
+};
 MystiqueDancer.prototype = Object.create(Dancer.prototype);
 MystiqueDancer.prototype.constructor = MystiqueDancer;
 
 MystiqueDancer.prototype.changeCharacter = function () {
-  var charArr = ["./img/beast.gif", "./img/cyclops.gif", "./img/gambit.gif", "./img/jube.gif", "./img/Juggernaut.gif", "./img/ProfX.gif", "./img/storm.gif"];
+  var charArr = ["./img/mystique.gif", "./img/beast.gif", "./img/cyclops.gif", "./img/gambit.gif", "./img/jube.gif", "./img/Juggernaut.gif", "./img/ProfX.gif", "./img/storm.gif"];
   var randomImage = charArr[Math.floor(Math.random() * charArr.length)];
   this.$node.attr('src', randomImage);
-}
+};
 
 
 

@@ -41,4 +41,4 @@ Dancer.prototype.lineUp = function (top) {
     left: 10
   };
   this.$node.css(styleSettings);
-}
+};
