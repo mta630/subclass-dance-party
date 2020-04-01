@@ -22,11 +22,10 @@ HulkDancer.prototype.step = function () {
       top: dimensions[0],
       left: dimensions[1]
     }, 4000);
-  }
-
-  if (!this.isMoving){
+  } else {
     this.$node.stop();
   }
+
 };
 
 

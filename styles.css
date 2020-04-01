@@ -83,7 +83,6 @@ ul li{
 
 .HulkDancer {
   border:none;
-  background-image: url(./hulkTransition.gif);
   background-repeat: no-repeat;
 }
 
@@ -93,6 +92,18 @@ ul li{
 
 .SpiderDancer {
   border: none;
+}
+
+.SymbioteDancer {
+  width: 100px;
+  height: auto;
+}
+
+.MystiqueDancer {
+}
+
+#MystiqueDancer {
+  cursor: help;
 }
 
 .dancefloor {
@@ -114,6 +125,23 @@ ul li{
 	}
 }
 
+@keyframes rock {
+	0% {
+		transform: rotateZ(0);
+	}
+	33% {
+		transform: rotateZ(90deg);
+  }
+
+  66% {
+    transform: rotateZ(-90deg);
+  }
+
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
 @keyframes twist {
   0% {
     -webkit-transform: rotateY(0deg);
@@ -133,6 +161,20 @@ ul li{
   50% {
     opacity: 0;
   }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.7);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.7);
+	}
 }
 
 

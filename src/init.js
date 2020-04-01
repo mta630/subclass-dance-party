@@ -1,10 +1,18 @@
 $(document).ready(function () {
-  const hulkSmash = new Audio("./smash.wav")
+  const hulkSmash = new Audio('./smash.wav')
   hulkSmash.volume = 0.04;
 
   window.dancers = [];
   window.dancerNames = [];
   window.isHulkAngry = false;
+  window.isFused = false;
+
+  // var fusionLoop = function (){
+  //   setInterval(function(){
+
+  //   },3000)
+  // }
+
 
   $('.addDancerButton').on('click', function (event) {
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
@@ -25,66 +33,71 @@ $(document).ready(function () {
     } else {
       $(`.${dancerMakerFunctionName}`).toggle();
     }
+
+
+
+    $(".MystiqueDancer").click(function (e) {
+      var mystiqueIndex = window.dancerNames.indexOf('MystiqueDancer');
+      var mystique = window.dancers[mystiqueIndex];
+      console.log(mystique);
+      mystique.changeCharacter();
+    });
   });
 
   $('.lineupButton').on('click', function (event) {
-    window.dancers.forEach(dancer => dancer.lineUp());
+    window.dancers.forEach(function (dancer) {
+      dancer.lineUp();
+      dancer.isMoving = false;
+    });
   });
 
   $('.startMoving').on('click', function (event) {
+    window.dancerNames.forEach(dancerName => $(`.${dancerName}`).stop());
     window.dancers.forEach(dancer => dancer.isMoving ? dancer.isMoving = false : dancer.isMoving = true);
     console.log(window.dancers[0].isMoving);
   });
 
+
+
+
+
+
   $('.hulkAngry').on('click', function (event) {
     if (!window.isHulkAngry) {
-      hulkSmash.play();
-      var name = $(this).data('data-hulk-angry');
-      var hulk = $(`.${"HulkDancer"}`);
-      var hulkIndex = window.dancerNames.indexOf("HulkDancer");
-      var wasHeMoving = window.dancers[hulkIndex].isMoving
+      hulkSmash.play(); //sound effect
 
-      if (wasHeMoving = true) {
-        window.dancers[hulkIndex].isMoving = false;
-      }
+      var hulk = $(`.${'HulkDancer'}`);
+      console.log(hulk);
 
-      hulk.fadeOut('fast', function () {
-        hulk.attr('src', './hulkTransition.gif');
-        hulk.fadeIn('fast');
+      hulk.fadeOut(function () {
+        $(this).load(function () { $(this).fadeIn(300); });
+        $(this).attr('src', './hulkTransition.gif');
       });
 
       hulk.animate({
-        height: "300px",
-        width: "320px"
-      })
-      $(".hulkAngry").html("calm down hulk");
-      isHulkAngry = true;
+        height: '300px',
+        width: '320px'
+      });
 
-      if (wasHeMoving = true) {
-        window.dancers[hulkIndex].isMoving = true;
-      }
+      $('.hulkAngry').html('calm down hulk');
+      isHulkAngry = true;
 
     } else {
 
-      var hulkIndex = window.dancerNames.indexOf("HulkDancer");
-      var wasHeMoving = window.dancers[hulkIndex].isMoving
+      var hulk = $(`.${'HulkDancer'}`);
 
-      if (wasHeMoving = true) {
-        window.dancers[hulkIndex].isMoving = false;
-      }
 
-      var name = $(this).data('data-hulk-angry');
-      var hulk = $(`.${"HulkDancer"}`);
-      hulk.fadeOut('slow', function () {
-        hulk.attr('src', './hulk1.gif');
-        hulk.fadeIn('slow');
+      hulk.fadeOut(function () {
+        $(this).load(function () { $(this).fadeIn(300); });
+        $(this).attr('src', './hulk1.gif');
       });
-      $(".hulkAngry").html("hulk angry");
-      isHulkAngry = false
 
-      if (wasHeMoving = true) {
-        window.dancers[hulkIndex].isMoving = true;
-      }
+      hulk.animate({
+        height: '250px',
+        width: '200px'
+      });
+
+      $('.hulkAngry').html('hulk angry');
 
     }
   });

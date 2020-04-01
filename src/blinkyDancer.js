@@ -15,8 +15,9 @@ BlinkyDancer.prototype.step = function () {
   this.$node.css({ animation: "blink 1s linear infinite" });
   var dimensions = this.getRandomDimension();
 
-  if (this.isMoving){
+  if (this.isMoving) {
     setTimeout(this.setPosition(dimensions[0], dimensions[1], Math.random() * 1000), 1001);
   }
+
 };
 

@@ -1,7 +1,7 @@
 var SymbioteDancer = function (top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('');
-  this.$node.attr('src', './symbiote.jpg');
+  this.$node.addClass('SymbioteDancer');
+  this.$node.attr('src', './symbiote.gif');
 }
 SymbioteDancer.prototype = Object.create(Dancer.prototype);
 SymbioteDancer.prototype.constructor = SymbioteDancer;
@@ -11,7 +11,7 @@ SymbioteDancer.prototype.step = function () {
   Dancer.prototype.step.call(this);
 
   this.$node.css({
-    animation: "spin 1s linear infinite"
+    animation: "pulse 1s linear infinite"
   });
 
   var dimensions = this.getRandomDimension();
